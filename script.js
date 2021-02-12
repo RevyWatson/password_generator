@@ -1,4 +1,4 @@
-//Assignment variables for each character types
+//assignment variables for each character types within arrays
 let lowercase = ["q", "w", "e", "r", "t", "a", "s", "d", "f", "g", "z", "x", "c", "v", "b", "y", "u", "i", "o", "p", "h", "j", "k", "l", "n", "m"];
 let uppercase = ["Q", "W", "E", "R", "T", "A", "S", "D", "F", "G", "Z", "X", "C", "V", "B", "Y", "U", "I", "O", "P", "H", "J", "K", "L", "N", "M"];
 let numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -8,6 +8,7 @@ let wantsLowerCase;
 let wantsNumeric;
 let wantsSpecialChar;
 let wantsUpperCase;
+let passwordLength;
 
 let generateBtn = document.querySelector("#generate");
 console.log("hello!");
@@ -19,13 +20,11 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
-//Event listener for length prompt query and remaining comfirmation queries follow
+//event listener for length prompt and remaining comfirmation queries follow
 generateBtn.addEventListener("click", writePassword);
 
-//restricts user from choosing a numerical value outside of the range of 8-128
+//restricts user from choosing a numerical value outside of the range of 8-128 and redirects them back to the initial length prompt
 function writePassword() {
-  let passwordLength;
   function CharLength () {
       passwordLength = prompt("Enter desired number of characters for password (8-128):");
   if (passwordLength < 8 || passwordLength > 128 || passwordLength == "") {
@@ -34,7 +33,7 @@ function writePassword() {
   } 
 }
 CharLength()
-//forces user to select at least one of the character types
+//if user doesn't select at least one of the character types it redirects them back to the beginning of the queriers
 function youMustChoose() {
   wantsLowerCase = confirm("Do you want to include lowercase characters?");
   wantsNumeric = confirm("Do you want to include numbers?");
@@ -54,7 +53,7 @@ if (wantsLowerCase) {
 }
 if (wantsNumeric) {
   AllPossibleChars += numeric;
-  console.log(AllPossibleChars);
+  console.log(AllPossibleChars) * Math.floor(Math.random);
 }
 if (wantsSpecialChar) {
   AllPossibleChars += specialChar;
@@ -64,11 +63,9 @@ if (wantsUpperCase) {
   AllPossibleChars += uppercase;
   console.log(AllPossibleChars);
 }
-}
-
-//This function will be what actually spites out the password
 function generatePassword() {
-  return "test password"
+  return;
 }
 
-
+//what actually spites out the password
+}
