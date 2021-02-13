@@ -1,5 +1,5 @@
 # Password Generator
-This is the third homework assignment from the MSU Coding Boot Camp. The assignment was to modify the provided starter code to create a fully functional application that would allow users to generate random passwords based on password length, character and types.
+This is the third homework assignment from the MSU Coding Boot Camp. The assignment was to modify the provided starter code to create a fully functional application that would allow users to generate random passwords based on password length and character types.
 
 ![code-gen01](https://user-images.githubusercontent.com/76264693/107863335-9ce28880-6e21-11eb-87d4-60b35a688b6f.jpg)
 
