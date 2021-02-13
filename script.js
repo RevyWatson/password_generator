@@ -13,7 +13,7 @@ let magicUserPassword = ""
 
 let generateBtn = document.querySelector("#generate");
 
-//event listener for length prompt and remaining comfirmation queries follow
+//event listener for length prompt and comfirmation queries
 generateBtn.addEventListener("click", writePassword);
 
 
@@ -23,7 +23,8 @@ function writePassword() {
   
   passwordText.value = password;
   
-  function CharLength () { //restricts user from choosing a numerical value outside of the range of 8-128 and redirects them back to the initial length prompt
+//restricts user from choosing a numerical value outside of the range of 8-128 and redirects them back to the initial length prompt
+  function CharLength () { 
     passwordLength = prompt("Enter desired number of characters for password (8-128):");
     // console.log(passwordLength); checking if user numerical selection is correct
     if (passwordLength < 8 || passwordLength > 128 || passwordLength == "") {
@@ -33,7 +34,8 @@ function writePassword() {
   }
   CharLength()
  
-  function youMustChoose() {  //if user doesn't select at least one of the character types it redirects them back to the beginning of the queriers
+  //if user doesn't select at least one of the character types it redirects them back to the beginning of the queriers
+  function youMustChoose() {  
     wantsLowerCase = confirm("Do you want to include lowercase characters?");
     wantsNumeric = confirm("Do you want to include numbers?");
     wantsSpecialChar = confirm("Do you want to include special characters?");
@@ -43,8 +45,9 @@ function writePassword() {
     youMustChoose();
     }
   }
-  
-  youMustChoose(); //pulling character types from arrays (currently viewable in inspect console)
+  youMustChoose();
+
+  //pulling character types from arrays (currently viewable in inspect console)
   if (wantsLowerCase) {
     AllPossibleChars += lowercase;
     console.log(AllPossibleChars);
@@ -63,13 +66,14 @@ function writePassword() {
   }
 }
 
-  function generatePassword() { //what actually spits out the password
-    for (let i = 0; i < passwordLength.length; i++); {
-      const element = AllPossibleChars[i];
+ //what actually spits out the password
+  function generatePassword(min, max) {
+    for (let i = 0; i < passwordLength; i++); {
+      magicUserPassword += Math.floor(Math.random() * (max - min) + min);
+
       console.log("There is no Dana only coooooode!");        
       }
     }
-    
-    magicUserPassword
-    return ;
   
+  // magicUserPassword;
+  // return;
