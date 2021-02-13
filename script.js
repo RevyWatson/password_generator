@@ -1,8 +1,12 @@
 //assignment variables for each character types within arrays
 let lowercase = ["q", "w", "e", "r", "t", "a", "s", "d", "f", "g", "z", "x", "c", "v", "b", "y", "u", "i", "o", "p", "h", "j", "k", "l", "n", "m"];
+console.log(lowercase.length);
 let uppercase = ["Q", "W", "E", "R", "T", "A", "S", "D", "F", "G", "Z", "X", "C", "V", "B", "Y", "U", "I", "O", "P", "H", "J", "K", "L", "N", "M"];
+console.log(uppercase.length);
 let numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+console.log(numeric.length);
 let specialChar = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", "|", ";", ":", "'", "<", ">", "?", ",", "." ];
+console.log(specialChar.length);
 let AllPossibleChars = [];
 let wantsLowerCase;
 let wantsNumeric;
@@ -22,6 +26,9 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
   
   passwordText.value = password;
+
+
+function generatePassword() {
   
 //restricts user from choosing a numerical value outside of the range of 8-128 and redirects them back to the initial length prompt
   function CharLength () { 
@@ -64,16 +71,14 @@ function writePassword() {
     AllPossibleChars += uppercase;
     console.log(AllPossibleChars);
   }
-}
-
- //what actually spits out the password
-  function generatePassword(min, max) {
-    for (let i = 0; i < passwordLength; i++); {
-      magicUserPassword += Math.floor(Math.random() * (max - min) + min);
-
-      console.log("There is no Dana only coooooode!");        
-      }
-    }
+  //what actually spits out the password
+     for (let i = 0; i < passwordLength; i++) {
+       magicUserPassword += AllPossibleChars[Math.floor(Math.random() * (AllPossibleChars.length))];
   
-  // magicUserPassword;
-  // return;
+       console.log(Math.floor(Math.random() * (AllPossibleChars.length)));
+  
+       console.log(magicUserPassword);        
+       }
+    return magicUserPassword;
+}
+}
