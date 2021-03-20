@@ -15,4 +15,4 @@ This application provided starter code to create a fully functional application 
 * When the password is generated the password is either displayed in an alert or written to the page.
 
 ## Technologies Used
-This application was built upon provided dynamic HTML and CSS stying and powered by JavaScript.
+This application was built upon provided dynamic HTML and CSS stying and powered by JavaScript. Password Generator: https://revywatson.github.io/password_generator/ 
